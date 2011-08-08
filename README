@@ -1,0 +1,42 @@
+I've wroten this localStorage wrapper because noticed that every method throws exceptions.
+Here is some examples.
+
+Method localStorage.setItem throws follow exceptions:
+  - Chome:
+    code: 22
+    message: QUOTA_EXCEEDED_ERR: DOM Exception 22
+    name: QUOTA_EXCEEDED_ERR
+    
+  - Firefox:
+    code: 1014
+    name: Persistent storage maximum size reached
+    message: NS_ERROR_DOM_QUOTA_REACHED
+
+  - Interner Explorer:
+    code: none
+    name: none
+    message: Not enough storage is available to complete this operation
+
+
+Unknown and undocumented exceptions of other methods (some examples, most of them I catch from Firefox and IE):
+  name: NS_ERROR_FAILURE
+  message: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIDOMStorage.setItem]
+  message: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIDOMStorage.clear]
+  message: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIDOMStorage.getitem]
+
+  name: NS_ERROR_FILE_CORRUPTED
+  message: Component returned failure code: 0x8052000b (NS_ERROR_FILE_CORRUPTED) [nsIDOMStorage2.clear]
+  message: Component returned failure code: 0x8052000b (NS_ERROR_FILE_CORRUPTED) [nsIDOMStorage2.getItem]
+
+  name: NS_ERROR_STORAGE_IOERR
+  message: Component returned failure code: 0x80630002 (NS_ERROR_STORAGE_IOERR) [nsIDOMStorage.clear]
+  message: Component returned failure code: 0x80630002 (NS_ERROR_STORAGE_IOERR) [nsIDOMStorage.removeitem]
+
+  name: NS_ERROR_FILE_NO_DEVICE_SPACE
+  message: Сomponent returned failure code: 0x80520010 (NS_ERROR_FILE_NO_DEVICE_SPACE) [nsIDOMStorage2.clear]
+  message: Сomponent returned failure code: 0x80520010 (NS_ERROR_FILE_NO_DEVICE_SPACE) [nsIDOMStorage2.removeItem]
+
+  message: access denied.
+
+  name: NS_ERROR_FILE_ACCESS_DENIED
+  message: Component returned failure code: 0x80520015 (NS_ERROR_FILE_ACCESS_DENIED) [nsIDOMStorage.removeItem]

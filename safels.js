@@ -4,9 +4,8 @@
 
     /**
      * SafeLS - safety localStorage usage!
-     * Little JavaScript object that wrap every localStorage method in try-catch
-     * because every method thows different exceptions escessialy in Chome and Firefox as they store data in SQLite.
-     * You can use it even browser has no localStorage support.
+     * Little JavaScript object that wrap every localStorage method in try-catch because every method thows exceptions not only setItem.
+     * You can safely use this wrapper even browser has no localStorage support.
      * @name SafeLS
      */
     window['SafeLS'] = {
@@ -24,6 +23,7 @@
             } catch (e) {
                 // throw exceptions frequently
             }
+            return false;
         },
 
         /**
@@ -51,6 +51,7 @@
             } catch(e) {
                 // throw exceptions frequently
             }
+            return false;
         },
 
         /**
@@ -65,6 +66,7 @@
             } catch(e) {
                 // throw exceptions frequently
             }
+            return false;
         },
 
         /**
