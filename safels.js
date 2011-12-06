@@ -1,10 +1,10 @@
-(function() {
+(function(/**window*/window) {
 
     var ls = window['localStorage'];
 
     /**
      * SafeLS - safety localStorage usage!
-     * Little JavaScript object that wrap every localStorage method in try-catch because every method thows exceptions not only setItem.
+     * Little JavaScript object that wrap every localStorage method in try-catch because every method throws exceptions, not only setItem.
      * You can safely use this wrapper even browser has no localStorage support.
      * @name SafeLS
      */
@@ -105,4 +105,4 @@
         }
     };
 
-})();
+})(window);
