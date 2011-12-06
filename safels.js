@@ -26,7 +26,8 @@
                     try {
                         ls.setItem(key, data);
                         return true;
-                    } catch(e) {}
+                    } catch(e) {
+                    }
                 }
                 // throw exceptions frequently
             }
