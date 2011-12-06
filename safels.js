@@ -21,6 +21,13 @@
                 ls.setItem(key, data);
                 return true;
             } catch (e) {
+                // iPad workaround
+                if (this.removeItem(key)) {
+                    try {
+                        ls.setItem(key, data);
+                        return true;
+                    } catch(e) {}
+                }
                 // throw exceptions frequently
             }
             return false;
