@@ -1,6 +1,11 @@
 (function(/**window*/window) {
 
-    var ls = window['localStorage'];
+    var ls = null;
+    try {
+        ls = window['localStorage'];
+    } catch(e) {
+        // Chrome throws exception if cookie is disabled    
+    }
 
     /**
      * SafeLS - safety localStorage usage!
